@@ -3,7 +3,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import java.util.*;
 import java.lang.reflect.Constructor;
-import pac.*;
+import pei.*;
 
 public class ControleSession extends HttpServlet {
 
@@ -26,7 +26,7 @@ public class ControleSession extends HttpServlet {
 		Integer droitUtil = 0;
 		HttpSession session = req.getSession(true);
 
-		String droitcmd = session.getAttribute("droit").toString();
+		String droitcmd = (String)(session.getAttribute("droitUtil"));
 		if (droitcmd != null) {
 			switch (droitcmd) {
 				case "all": droitUtil = 1; break;
@@ -42,7 +42,7 @@ public class ControleSession extends HttpServlet {
 	private boolean evaluerDroitCommande(HttpServletRequest req) {
 		boolean droitCommande = false;
 
-		String droitcmd = req.getAttribute("droitCmd");
+		String droitcmd = (String)(req.getAttribute("droitCmd"));
 		if (droitcmd != null && droitcmd.equals(Controleur.ADMIN)) {
 			droitCommande = true;
 		}

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
- Licensed to the Apache Software Foundation (ASF) under one or more
+ Licensed to the Apeihe Software Foundation (ASF) under one or more
   contributor license agreements.  See the NOTICE file distributed with
   this work for additional information regarding copyright ownership.
-  The ASF licenses this file to You under the Apache License, Version 2.0
+  The ASF licenses this file to You under the Apeihe License, Version 2.0
   (the "License"); you may not use this file except in compliance with
   the License.  You may obtain a copy of the License at
 
-      http://www.apache.org/licenses/LICENSE-2.0
+      http://www.apeihe.org/licenses/LICENSE-2.0
 
   Unless required by applicable law or agreed to in writing, software
   distributed under the License is distributed on an "AS IS" BASIS,
@@ -32,7 +32,7 @@
     <!-- commande pour obtenir la page d'accueil -->
     <context-param>
         <param-name>cmd-accueil</param-name>
-		<param-value>pac.NullCommande;accueil.jsp;all</param-value>
+		<param-value>pei.NullCommande;accueil.jsp;all</param-value>
     </context-param>
 
     <!-- le nom de la commande de login doit etre obligatoirement login -->
@@ -41,55 +41,47 @@
 	ou non la connexion -->
 	<context-param>
         <param-name>cmd-login</param-name>
-		<param-value>pac.CommandeVerifLogin;accueil.jsp;all</param-value>
+		<param-value>pei.CommandeVerifLogin;accueil.jsp;all</param-value>
     </context-param>
 	<context-param>
         <param-name>cmd-produits</param-name>
-		<param-value>pac.CommandeProduits;produits.jsp;all</param-value>
+		<param-value>pei.CommandeProduits;produits.jsp;all</param-value>
     </context-param>
 	<context-param>
         <param-name>cmd-clients</param-name>
-		<param-value>pac.CommandeClients;clients.jsp;all</param-value>
+		<param-value>pei.CommandeClients;clients.jsp;all</param-value>
     </context-param>
 	<context-param>
         <param-name>cmd-achats</param-name>
-		<param-value>pac.CommandeAchatsClient;achatsClient.jsp;all</param-value>
+		<param-value>pei.CommandeAchatsClient;achatsClient.jsp;all</param-value>
     </context-param>
 	<context-param>
         <param-name>cmd-achatsProduit</param-name>
-		<param-value>pac.CommandeAchatsProduit;achatsProduit.jsp;all</param-value>
+		<param-value>pei.CommandeAchatsProduit;achatsProduit.jsp;all</param-value>
     </context-param>
 	<context-param>
         <param-name>cmd-produitsMAJ</param-name>
-		<param-value>pac.CommandeProduits;produitsMAJ.jsp;admin</param-value>
+		<param-value>pei.CommandeProduits;produitsMAJ.jsp;admin</param-value>
     </context-param>
 	<context-param>
         <param-name>cmd-produitMAJ</param-name>
-		<param-value>pac.CommandeProduit;produitMAJ.jsp;admin</param-value>
+		<param-value>pei.CommandeProduit;produitMAJ.jsp;admin</param-value>
     </context-param>
 	<context-param>
         <param-name>cmd-produitMAJValid</param-name>
-		<param-value>pac.CommandeProduitMAJValid;produitMAJValid.jsp;admin</param-value>
+		<param-value>pei.CommandeProduitMAJValid;produitMAJValid.jsp;admin</param-value>
     </context-param>
 
    <!-- commande qui permet d'obtenir le formulaire de connexion -->
     <context-param>
         <param-name>cmd-connexion</param-name>
-		<param-value>pac.NullCommande;login.jsp;all</param-value>
+		<param-value>pei.NullCommande;login.jsp;all</param-value>
     </context-param>
      <context-param>
          <param-name>cmd-deconnect</param-name>
- 		<param-value>pac.NullCommande;login.jsp;all</param-value>
+ 		<param-value>pei.Deconnexion;login.jsp;all</param-value>
      </context-param>
 
-    <!-- commande qui permet de gérer la déconnexion -->
-    <!-- A DECOMMENTER QUAND LA CLASSE Deconnexion SERA ECRITE -->
-    <!--
-    <context-param>
-        <param-name>cmd-deconnect</param-name>
-	<param-value>pac.Deconnexion;login.jsp;all</param-value>
-    </context-param>
-    -->
 
     <!-- commande qui permet, en mode connecté, d'obtenir la page
 	 erreurDroit.jsp suite à une requête directe vers une JSP
@@ -98,7 +90,7 @@
     -->
     <context-param>
         <param-name>cmd-erreurDroit</param-name>
-	<param-value>pac.NullCommande;erreurs/erreurDroit.jsp;all</param-value>
+	<param-value>pei.NullCommande;erreurs/erreurDroit.jsp;all</param-value>
     </context-param>
 
     <!-- déclaration de la servlet qui fait le controle de session -->

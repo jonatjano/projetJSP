@@ -6,28 +6,28 @@
 	if (controleurOK==null) {
 		request.setAttribute("controleurOK",true);
 %>
-		<jsp:forward page="/erreurs/erreurDroit.jsp" />		
-<%		
-	}	
-	
-	Integer droitUtil = // A COMPLETER !
+		<jsp:forward page="/erreurs/erreurDroit.jsp" />
+<%
+	}
+
+	Integer droitUtil = 2;
 	/*
-		Le droit de connexion doit etre 1 (consult) ou 2 (admin). Si 
+		Le droit de connexion doit etre 1 (consult) ou 2 (admin). Si
 		ce n'est aucun des deux alors on est renvoyé vers la page de login.
 	 */
-	boolean afficheMenuAdmin; 
-	
+	boolean afficheMenuAdmin = false;
+
 	if (droitUtil == null) {
 %>
 		<jsp:forward page="login.jsp" />
-<%		
+<%
 	}
 	else {
 		afficheMenuAdmin = (droitUtil == 2);
 		if ((droitUtil != 1) && (droitUtil != 2)) {
 %>
 			<jsp:forward page="login.jsp" />
-<%		
+<%
 		} //fin droit!=1 et droit!=2
 	} //fin else
 %>
@@ -54,7 +54,7 @@
 		String nomCmd = request.getParameter("cmd");
 		String classeCmd = (String)request.getAttribute("classeCmd");
 		String jsp = (String)request.getAttribute("jsp");
-%>	
+%>
 		<table class="erreur">
 		<tr>
 		<th> nom Commande </th>
@@ -102,9 +102,9 @@
 	  <%
 		}
 	  %>
-	  
+
      </div>
      <div class="contenu">
        <div id="titre">
-	 <%= request.getParameter("titre")%>
+	 <%= titre %>
        </div>
