@@ -1,0 +1,17 @@
+./pac/CommandeProduitMAJValid.java
+./pac/CommandeAchatsClient.java
+./pac/CommandeClients.java
+./pac/CommandeVerifLogin.java
+./pac/Commande.java
+./pac/Produit.java
+./pac/DB.java
+./pac/CommandeAchatsProduit.java
+./pac/Achat.java
+./pac/CommandeProduits.java
+./pac/NullCommande.java
+./pac/CommandeClient.java
+./pac/CommandeProduit.java
+./pac/AchatCP.java
+./pac/Client.java
+./ControleSession.java
+./Controleur.java
