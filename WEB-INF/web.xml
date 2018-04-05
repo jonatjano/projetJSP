@@ -53,7 +53,7 @@
         <param-name>cmd-participants</param-name>
 		<param-value>cmd.CommandeParticipants;participants.jsp;all</param-value>
     </context-param>
-    
+
 	<context-param>
         <param-name>cmd-epreuve</param-name>
 		<param-value>cmd.CommandeEpreuve;epreuves.jsp;all</param-value>
@@ -62,7 +62,7 @@
         <param-name>cmd-epreuves</param-name>
 		<param-value>cmd.CommandeEpreuves;epreuves.jsp;all</param-value>
     </context-param>
-    
+
 	<context-param>
         <param-name>cmd-inscriptions</param-name>
 		<param-value>cmd.CommandeInscriptions;inscriptions.jsp;all</param-value>
@@ -99,6 +99,31 @@
 	<context-param>
 		<param-name>cmd-participantDelValid</param-name>
 		<param-value>cmd.CommandeParticipantDelValid;participantDelValid.jsp;admin</param-value>
+	</context-param>
+
+	<context-param>
+        <param-name>cmd-epreuvesMAJ</param-name>
+		<param-value>cmd.CommandeEpreuves;epreuvesMAJ.jsp;admin</param-value>
+    </context-param>
+	<context-param>
+		<param-name>cmd-epreuveMAJ</param-name>
+		<param-value>cmd.CommandeEpreuve;epreuveMAJ.jsp;admin</param-value>
+	</context-param>
+	<context-param>
+		<param-name>cmd-epreuveMAJValid</param-name>
+		<param-value>cmd.CommandeEpreuveMAJValid;epreuveMAJValid.jsp;admin</param-value>
+	</context-param>
+	<context-param>
+		<param-name>cmd-epreuveAdd</param-name>
+		<param-value>cmd.NullCommande;epreuveAdd.jsp;admin</param-value>
+	</context-param>
+	<context-param>
+		<param-name>cmd-epreuveAddValid</param-name>
+		<param-value>cmd.CommandeEpreuveAddValid;epreuveAddValid.jsp;admin</param-value>
+	</context-param>
+	<context-param>
+		<param-name>cmd-epreuveDelValid</param-name>
+		<param-value>cmd.CommandeEpreuveDelValid;epreuveDelValid.jsp;admin</param-value>
 	</context-param>
 
 	<!-- <context-param>

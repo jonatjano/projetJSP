@@ -60,34 +60,40 @@ public class DB_EPREUVE {
 	{
 		int clef = -1;
 
-		ps_insert.setString(1,e.getNom());
-		ps_insert.setString(2,e.getCateg());
-		ps_insert.setString(3,e.getDatep());
-		ps_insert.setInt(4,e.getTarifClub());
-		ps_insert.setInt(5,e.getTarifNonClub());
-		//le paramètre passé à executeUpdate permet de récupérer les clefs
-		//éventuellement générées automatiquement (via le type serial) au moment
-		//de l'exécution de l'ordre SQL.
-		ps_insert.executeUpdate();
-		//on récupère les clefs générées (une seule ici)
-		ResultSet clefs = ps_insert.getGeneratedKeys();
-		if (clefs.next()) {
-			clef = clefs.getInt(1);
+		try {
+			ps_insert.setString(1,e.getNom());
+			ps_insert.setString(2,e.getCateg());
+			ps_update.setDate(3,java.sql.Date.valueOf(e.getDatep()));
+			ps_insert.setInt(4,e.getTarifClub());
+			ps_insert.setInt(5,e.getTarifNonClub());
+			//le paramètre passé à executeUpdate permet de récupérer les clefs
+			//éventuellement générées automatiquement (via le type serial) au moment
+			//de l'exécution de l'ordre SQL.
+			ps_insert.executeUpdate();
+			//on récupère les clefs générées (une seule ici)
+			ResultSet clefs = ps_insert.getGeneratedKeys();
+			if (clefs.next()) {
+				clef = clefs.getInt(1);
+			}
 		}
+		catch (Exception ex) {}
 
 		return clef;
 	}
 
 	public void updateEpreuve(Epreuve e) throws Exception
 	{
-		ps_update.setString(1,e.getNom());
-		ps_update.setString(2,e.getCateg());
-		ps_update.setString(3,e.getDatep());
-		ps_update.setInt(4,e.getTarifClub());
-		ps_update.setInt(5,e.getTarifNonClub());
-		ps_update.setInt(6,e.getIde());
+		try {
+			ps_update.setString(1,e.getNom());
+			ps_update.setString(2,e.getCateg());
+			ps_update.setDate(3,java.sql.Date.valueOf(e.getDatep()));
+			ps_update.setInt(4,e.getTarifClub());
+			ps_update.setInt(5,e.getTarifNonClub());
+			ps_update.setInt(6,e.getIde());
 
-		ps_update.executeUpdate();
+			ps_update.executeUpdate();
+		}
+		catch (Exception ex) {}
 	}
 
 	public void deleteEpreuve(int ide) throws Exception{

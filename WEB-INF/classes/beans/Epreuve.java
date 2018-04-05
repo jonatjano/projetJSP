@@ -69,8 +69,15 @@ public class Epreuve
 		this.tarifNonClub=tarifNonClub;
 	}
 
-	public Epreuve()
-	{}
+	public Epreuve(String nom, String categ, String datep, int tarifClub, int tarifNonClub)
+	{
+		this.ide = -1;
+		this.nom = nom;
+		this.categ = categ;
+		this.datep = datep;
+		this.tarifClub = tarifClub;
+		this.tarifNonClub = tarifNonClub;
+	}
 
 	public Epreuve(int ide, String nom, String categ, String datep, int tarifClub, int tarifNonClub)
 	{
