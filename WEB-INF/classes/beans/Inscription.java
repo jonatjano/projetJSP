@@ -15,7 +15,7 @@ public class Inscription
 		return ide;
 	}
 	
-	public int getCategTarif()
+	public String getCategTarif()
 	{
 		return categTarif;
 	}
