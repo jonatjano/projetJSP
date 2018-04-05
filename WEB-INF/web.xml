@@ -43,6 +43,25 @@
         <param-name>cmd-login</param-name>
 		<param-value>pei.CommandeVerifLogin;accueil.jsp;all</param-value>
     </context-param>
+
+	<context-param>
+        <param-name>cmd-participants</param-name>
+		<param-value>pei.CommandeParticipants;participants.jsp;all</param-value>
+    </context-param>
+	<context-param>
+        <param-name>cmd-epreuves</param-name>
+		<param-value>pei.CommandeEpreuves;epreuves.jsp;all</param-value>
+    </context-param>
+	<context-param>
+        <param-name>cmd-inscriptionParticipants</param-name>
+		<param-value>pei.CommandeInscriptionParticipants;inscriptionParticipants.jsp;all</param-value>
+    </context-param>
+	<context-param>
+        <param-name>cmd-inscriptionEpreuves</param-name>
+		<param-value>pei.CommandeInscriptionParticipants;inscriptionEpreuves.jsp;all</param-value>
+    </context-param>
+
+	
 	<context-param>
         <param-name>cmd-produits</param-name>
 		<param-value>pei.CommandeProduits;produits.jsp;all</param-value>
