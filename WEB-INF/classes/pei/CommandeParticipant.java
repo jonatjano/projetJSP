@@ -8,7 +8,8 @@ import bdd.DBS;
 // Cette cde recupere un participant:
 // Le numero de participant est dans la requete HTTP
 //
-public class CommandeParticipant implements Commande {
+public class CommandeParticipant implements Commande
+{
 	private final String next;
 
 	public CommandeParticipant(String next)
