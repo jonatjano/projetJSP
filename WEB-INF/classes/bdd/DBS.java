@@ -25,7 +25,7 @@ public class DBS {
      try{
         	Class.forName ("org.postgresql.Driver");
 		System.out.println("Driver installe");
-        	cnx = DriverManager.getConnection ("jdbc:postgresql://localhost/jonathan", "jonathan", "thomas"); // A MODIFIER !
+        	cnx = DriverManager.getConnection ("jdbc:postgresql://woody", "ba160866", "Adam1999"); // A MODIFIER !
 		System.out.println("connexion etablie");
 		db_participant = new DB_PARTICIPANT(cnx);
 		db_epreuve = new DB_EPREUVE(cnx);
