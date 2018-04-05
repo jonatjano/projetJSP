@@ -97,7 +97,7 @@ public class DB_EPREUVE {
 
 	// cette méthode ne peut être utilisée que dans cette classe
 	// elle ne peut pas être utilisée dans d'autres classes
-	private ArrayList<Epreuve> getEpreuves(String req) throws Exception
+	private ArrayList<Epreuve> getEpreuves(String req, String order) throws Exception
 	{
 
 		Epreuve epr;
@@ -105,7 +105,7 @@ public class DB_EPREUVE {
 
 		aepr = new ArrayList<Epreuve>();
 		Statement st = conn.createStatement();
-		ResultSet rs = st.executeQuery(req);
+		ResultSet rs = st.executeQuery(req + order);
 		while(rs.next()){
 			epr = new Epreuve(
 			rs.getInt("ide"), rs.getString("nom"),
@@ -116,8 +116,12 @@ public class DB_EPREUVE {
 		return aepr;
 	}
 
+    public ArrayList<Epreuve> getEpreuves(String order) throws Exception{
+  		return getEpreuves("select * from epreuve order by ", order);
+    }
+
 	public ArrayList<Epreuve> getEpreuves() throws Exception{
-		return getEpreuves("select * from epreuve");
+		return getEpreuves("ide");
 	}
 
 

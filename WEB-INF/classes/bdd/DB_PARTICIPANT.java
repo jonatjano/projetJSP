@@ -25,10 +25,10 @@ public class DB_PARTICIPANT {
         ps_select = conn.prepareStatement("select nom,age from participant where idp=?");
   	ps_insert = conn.prepareStatement("insert into participant values(default,?,?)",ps_insert.RETURN_GENERATED_KEYS);
         ps_update = conn.prepareStatement("update participant set nom=?, age=? where idp=?");
-        ps_delete = conn.prepareStatement("delete from participant where idp=?"); 
+        ps_delete = conn.prepareStatement("delete from participant where idp=?");
      } catch(SQLException ex){System.out.println(ex);}
   }
-      
+
   public Participant getParticipant(int idp) throws Exception{
       Participant p=null;
       ps_select.setInt(1,idp);
@@ -36,7 +36,7 @@ public class DB_PARTICIPANT {
       if(rs.next()){
 	  String nom = rs.getString("nom");
 	  int age = rs.getInt("age");
-          p = new Participant(idp,nom,age);        
+          p = new Participant(idp,nom,age);
       }
       return p;
   }
@@ -50,7 +50,7 @@ public class DB_PARTICIPANT {
 
 			ps_insert.setString(1,p.getNom());
 			ps_insert.setInt(2,p.getAge());
-			//le paramètre passé à executeUpdate permet de récupérer les clefs 
+			//le paramètre passé à executeUpdate permet de récupérer les clefs
 			//éventuellement générées automatiquement (via le type serial) au moment
 			//de l'exécution de l'ordre SQL.
 			ps_insert.executeUpdate();
@@ -62,7 +62,7 @@ public class DB_PARTICIPANT {
 
 			return clef;
   }
-        
+
   public void updateParticipant(Participant p) throws Exception{
 			ps_update.setString(1,p.getNom());
 			ps_update.setInt(2,p.getAge());
@@ -77,25 +77,29 @@ public class DB_PARTICIPANT {
 
   // cette méthode ne peut être utilisée que dans cette classe
   // elle ne peut pas être utilisée dans d'autres classes
-  private ArrayList<Participant> getParticipants(String req) throws Exception{
+  private ArrayList<Participant> getParticipants(String req, String order) throws Exception{
 	// pre-condition: req est de la forme "SELECT * FROM Participant ..."
 	// car il s'agit d'extraire un ensemble de participants
 
         Participant par;
 	ArrayList<Participant> apar = null;
 
-		apar = new ArrayList<Participant>(); 
-		Statement st = conn.createStatement(); 
-		ResultSet rs = st.executeQuery(req); 
-		while(rs.next()){ 
-		    par = new Participant(rs.getInt("idp"), rs.getString("nom"), rs.getInt("age")); 
-		    apar.add(par); 
-		} 
+		apar = new ArrayList<Participant>();
+		Statement st = conn.createStatement();
+		ResultSet rs = st.executeQuery(req + order);
+		while(rs.next()){
+		    par = new Participant(rs.getInt("idp"), rs.getString("nom"), rs.getInt("age"));
+		    apar.add(par);
+		}
 	return apar;
   }
 
+  public ArrayList<Participant> getParticipants(String order) throws Exception{
+	return getParticipants("select * from participant order by ", order);
+  }
+
   public ArrayList<Participant> getParticipants() throws Exception{
-	return getParticipants("select * from participant");
+	return getParticipants("idp");
   }
 
 
