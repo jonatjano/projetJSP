@@ -8,7 +8,7 @@
 <%@include file="ihm/miseEnPageSPORT1.jsp" %>
 
 <%	// ==============  CORPS =================================================
-	Participant p = (Participant)request.getAttribute("participant");
+	Participant p = ((List<Participant>)request.getAttribute("participants")).get(0);
 	out.println("<center><h3>mise a jour participant</h3></center>");
 	out.println("<center><table>");
 	out.println("	<tr class=\"enteteTableau\"><th>idp</th><th>nom</th><th>age</th></tr>");

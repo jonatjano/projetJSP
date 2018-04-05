@@ -12,10 +12,10 @@
 
 	Integer droitUtil = null;// (request.getSession().getAttribute("droitUtil") == null)? null : ;
 	String droitUtilSession = (String)(request.getSession().getAttribute("droitUtil"));
-	if (droitUtilSession.equals("all")) {
+	if (droitUtilSession != null && droitUtilSession.equals("all")) {
 		droitUtil = 1;
 	}
-	else if (droitUtilSession.equals("admin")) {
+	else if (droitUtilSession != null && droitUtilSession.equals("admin")) {
 		droitUtil = 2;
 	}
 	/*
