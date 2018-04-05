@@ -1,4 +1,4 @@
-package pei;
+package cmd;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
