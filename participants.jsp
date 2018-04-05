@@ -12,7 +12,12 @@
 	List<Participant> participants = (List<Participant>)request.getAttribute("participants");
 	String coul="lignePaire";
 	out.println("<table>");
-	out.println("<tr class=\"enteteTableau\"><th>idp</th><th>nom</th><th>age</th></tr>");
+	out.println("<tr class=\"enteteTableau\">" + 
+				"<th><a href=\"controleur?cmd=participants&trie=idp\">idp</a></th>" + 
+				"<th><a href=\"controleur?cmd=participants&trie=nom\">nom</a></th>" + 
+				"<th><a href=\"controleur?cmd=participants&trie=age\">age</a></th>" + 
+				"</tr>");
+				
 	for (Participant p : participants)
 	{
 		coul=(coul.equals("lignePaire"))?"ligneImpaire":"lignePaire";

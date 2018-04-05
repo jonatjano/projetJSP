@@ -1,5 +1,6 @@
 package cmd;
 
+import java.util.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import beans.Epreuve;
@@ -23,8 +24,11 @@ public class CommandeEpreuve implements Commande
 
 		int ide = Integer.parseInt(req.getParameter("ide"));
 		Epreuve epreuve = db.getDB_EPREUVE().getEpreuve(ide);
+		
+	  	List<Epreuve> epreuves = new ArrayList<Epreuve>();
+	  	epreuves.add(epreuve);
 
-		req.setAttribute("epreuve", epreuve);
+		req.setAttribute("epreuves", epreuves);
 		return next;
 	}
 

@@ -19,8 +19,12 @@
 		coul=(coul.equals("lignePaire"))?"ligneImpaire":"lignePaire";
 	    out.println("<tr class=\""+coul+"\">");
 
-		out.println("<td>"+i.getNomParticipant()+"</td>");
-		out.println("<td>"+i.getNomEpreuve()+"</td>");
+		String href="controleur?cmd=participant&idp="+i.getIdp();
+		out.println("<td><a href="+href+">"+i.getNomParticipant()+"</a></td>");
+		
+		href="controleur?cmd=epreuve&ide="+i.getIde();
+		out.println("<td><a href="+href+">"+i.getNomEpreuve()+"</a></td>");
+		
 		out.println("<td>"+i.getDateEpreuve()+"</td>");
 		out.println("<td>"+i.getCategTarif()+"</td>");
 		out.println("</tr>");
