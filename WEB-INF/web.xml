@@ -78,13 +78,10 @@
         <param-name>cmd-achatsProduit</param-name>
 		<param-value>pei.CommandeAchatsProduit;achatsProduit.jsp;all</param-value>
     </context-param>
+    
 	<context-param>
         <param-name>cmd-produitsMAJ</param-name>
 		<param-value>pei.CommandeProduits;produitsMAJ.jsp;admin</param-value>
-    </context-param>
-	<context-param>
-        <param-name>cmd-produitMAJ</param-name>
-		<param-value>pei.CommandeProduit;produitMAJ.jsp;admin</param-value>
     </context-param>
 	<context-param>
         <param-name>cmd-produitMAJValid</param-name>
