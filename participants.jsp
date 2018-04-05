@@ -1,30 +1,31 @@
 <%-- ======================================
-		produits.jsp
+		participants.jsp
 ========================================= --%>
 
-<%@ page import="java.util.*,pac.*" %>
+<%@ page import="java.util.*,beans.*" %>
 
-<% String titre = "LISTE DES PRODUITS"; %>
+<% String titre = "LISTE DES PARTICIPANTS"; %>
 
-<%@include file="ihm/miseEnPagePAC1.jsp" %>
+<%@include file="ihm/miseEnPageSPORT1.jsp" %>
 
 <%	// ==============  CORPS =================================================
-	List<Produit> produits = (List<Produit>)request.getAttribute("produits");
+	List<Participant> participants = (List<Participant>)request.getAttribute("participants");
 	String coul="lignePaire";
 	out.println("<table>");
-	out.println("<tr class=\"enteteTableau\"><th>np</th><th>lib</th><th>coul</th><th>qs</th></tr>");
-	for (Produit p : produits) {
+	out.println("<tr class=\"enteteTableau\"><th>idp</th><th>nom</th><th>age</th></tr>");
+	for (Participant p : participants) 
+	{
 		coul=(coul.equals("lignePaire"))?"ligneImpaire":"lignePaire";
-	        out.println("<tr class=\""+coul+"\">");
-		String href="controleur?cmd=achatsProduit&np="+p.getNp();
-		out.println("<td><a href="+href+">"+p.getNp()+"</a></td>");
-		out.println("<td>"+p.getLib()+"</td>");
-		out.println("<td>"+p.getCouleur()+"</td>");
-		out.println("<td>"+p.getQs()+"</td>");
+	    out.println("<tr class=\""+coul+"\">");
+	    
+		String href="controleur?cmd=inscriptionParticipants&idp="+p.getIdp();
+		out.println("<td><a href="+href+">"+p.getIdp()+"</a></td>");
+		out.println("<td>"+p.getNom()+"</td>");
+		out.println("<td>"+p.getAge()+"</td>");
 		out.println("</tr>");
 	}
 	out.println("</table>");
 	// ==============  CORPS =================================================
 %>
 
-<jsp:include page="ihm/miseEnPagePAC2.jsp" />
+<jsp:include page="ihm/miseEnPageSPORT2.jsp" />
