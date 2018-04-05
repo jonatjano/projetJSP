@@ -18,8 +18,8 @@ public class CommandeEpreuveDelValid implements Commande {
 	  DBS db = DBS.getInstance();
 
   	  int ide = Integer.parseInt(req.getParameter("ide"));
-
-	  db.getDB_PARTICIPANT().deleteParticipant(ide);
+  	  
+	  db.getDB_EPREUVE().deleteEpreuve(ide);
       return next;
   }
 
