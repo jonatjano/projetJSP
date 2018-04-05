@@ -22,7 +22,6 @@
 
 		String href="controleur?cmd=inscriptionEpreuve&ide="+e.getIde();
 		out.println("<td><a href="+href+">"+e.getIde()+"</a></td>");
-		out.println("<td>"+e.getIde()+"</td>");
 		out.println("<td>"+e.getNom()+"</td>");
 		out.println("<td>"+e.getCateg()+"</td>");
 		out.println("<td>"+e.getDatep()+"</td>");

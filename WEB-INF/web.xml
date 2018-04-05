@@ -46,13 +46,23 @@
 
 
 	<context-param>
+        <param-name>cmd-participant</param-name>
+		<param-value>cmd.CommandeParticipant;participants.jsp;all</param-value>
+    </context-param>
+    <context-param>
         <param-name>cmd-participants</param-name>
 		<param-value>cmd.CommandeParticipants;participants.jsp;all</param-value>
     </context-param>
+    
 	<context-param>
+        <param-name>cmd-epreuve</param-name>
+		<param-value>cmd.CommandeEpreuve;epreuves.jsp;all</param-value>
+    </context-param>
+    <context-param>
         <param-name>cmd-epreuves</param-name>
 		<param-value>cmd.CommandeEpreuves;epreuves.jsp;all</param-value>
     </context-param>
+    
 	<context-param>
         <param-name>cmd-inscriptions</param-name>
 		<param-value>cmd.CommandeInscriptions;inscriptions.jsp;all</param-value>

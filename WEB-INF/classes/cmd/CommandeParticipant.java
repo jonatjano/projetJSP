@@ -1,5 +1,6 @@
 package cmd;
 
+import java.util.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import beans.Participant;
@@ -23,8 +24,11 @@ public class CommandeParticipant implements Commande
 
 		int idp = Integer.parseInt(req.getParameter("idp"));
 		Participant participant = db.getDB_PARTICIPANT().getParticipant(idp);
+		
+	  	List<Participant> participants = new ArrayList<Participant>();
+	  	participants.add(participant);
 
-		req.setAttribute("participant", participant);
+		req.setAttribute("participants", participants);
 		return next;
 	}
 
