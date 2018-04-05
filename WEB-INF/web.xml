@@ -44,6 +44,7 @@
 		<param-value>pei.CommandeVerifLogin;accueil.jsp;all</param-value>
     </context-param>
 
+
 	<context-param>
         <param-name>cmd-participants</param-name>
 		<param-value>pei.CommandeParticipants;participants.jsp;all</param-value>
@@ -78,6 +79,7 @@
         <param-name>cmd-achatsProduit</param-name>
 		<param-value>pei.CommandeAchatsProduit;achatsProduit.jsp;all</param-value>
     </context-param>
+    
     
 	<context-param>
         <param-name>cmd-produitsMAJ</param-name>
