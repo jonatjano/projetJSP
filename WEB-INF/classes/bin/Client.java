@@ -1,13 +1,16 @@
 package bin;
-public class Client
+public class Epreuve
 {
-	int ncli;
+	int ide;
 	String nom;
-	String adr;
+	String categ;
+	String datep;
+	int tarifClub;
+	int tarifNonClub;
 	
-	public int getNcli()
+	public int getIde()
 	{
-		return ncli;
+		return ide;
 	}
 	
 	public String getNom()
@@ -15,14 +18,29 @@ public class Client
 		return nom;
 	}
 	
-	public String getAdr()
+	public String getCateg()
 	{
-		return adr;
+		return categ;
 	}
 	
-	public void setNcli(int ncli)
+	public String getDatep()
 	{
-		this.ncli=ncli;
+		return datep;
+	}
+	
+	public String getTarifClub()
+	{
+		return tarifClub;
+	}
+	
+	public String getTarifNonClub()
+	{
+		return tarifNonClub;
+	}
+	
+	public void setIde(int ide)
+	{
+		this.ide=ide;
 	}
 	
 	public void setNom(String nom)
@@ -30,21 +48,41 @@ public class Client
 		this.nom=nom;
 	}
 	
-	public void setAdr(String adr)
+	public void setCateg(String categ)
 	{
-		this.adr=adr;
+		this.categ=categ;
 	}
 	
-	public Client()
+	public void setDatep(String datep)
+	{
+		this.datep=datep;
+	}
+	
+	public void setTarifClub(int tarifClub)
+	{
+		this.tarifClub=tarifClub;
+	}
+	
+	public void setTarifNonClub(int tarifNonClub)
+	{
+		this.tarifNonClub=tarifNonClub;
+	}
+	
+	public Epreuve()
 	{}
 	
-	public Client(int ncli , String nom,  String adr)
+	public Epreuve(int ide, String nom, String categ, String datep, int tarifClub, int tarifNonClub)
 	{
-		setNcli(ncli);setNom(nom);setAdr(adr);
+		this.ide = ide;
+		this.nom = nom;
+		this.categ = categ;
+		this.datep = datep;
+		this.tarifClub = tarifClub;
+		this.tarifNonClub = tarifNonClub;
 	}
 	
 	public String toString()
 	{
-		return ncli+"," + nom +"," + adr;
+		return this.ide + "," + nom + "," + categ + "," + datep + "," + tarifClub + "," + tarifNonClub;
 	}
 }
