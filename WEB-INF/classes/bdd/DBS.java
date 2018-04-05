@@ -2,6 +2,7 @@ package bdd;
 
 import java.sql.*;
 
+//
 /*
  * Les lignes commentées pourront être décommentées lorsque vous aurez écrit les classes
  * DB... et les classes de beans manquantes.
