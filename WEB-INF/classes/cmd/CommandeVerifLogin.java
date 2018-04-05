@@ -28,7 +28,10 @@ public class CommandeVerifLogin implements Commande {
 		String nom = req.getParameter("nom");
 		String pass = req.getParameter("pass");
 
-		if (!((nom.equals("user") || nom.equals("admin")) && pass.equals(nom + "pwd"))) {
+		if (nom == null || pass == null) {
+			cible = "login.jsp";
+		}
+		else if (!((nom.equals("user") || nom.equals("admin")) && pass.equals(nom + "pwd"))) {
 			cible = "login.jsp";
 		}
 		else if (nom.equals("user") && pass.equals("userpwd")) {

@@ -92,7 +92,7 @@
 	  <ul>
 	    <li><a href="controleur?cmd=participants">Liste des participants</a></li>
 	    <li><a href="controleur?cmd=epreuves">Liste des &eacute;preuves</a></li>
-	    <li><a href="">...</a></li>
+	    <li><a href="controleur?cmd=inscriptions">Liste des inscriptions</a></li>
 	  </ul>
 	  <%
 		if (afficheMenuAdmin) {

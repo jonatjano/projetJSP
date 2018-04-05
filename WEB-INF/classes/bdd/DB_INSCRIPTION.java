@@ -119,6 +119,32 @@ public class DB_INSCRIPTION {
 
 	// cette méthode ne peut être utilisée que dans cette classe
 	// elle ne peut pas être utilisée dans d'autres classes
+	private ArrayList<InscriptionPE> getInscriptionPEs(String req) throws Exception
+	{
+		InscriptionPE ins;
+		ArrayList<InscriptionPE> ains = null;
+
+		ains = new ArrayList<InscriptionPE>();
+		Statement st = conn.createStatement();
+		ResultSet rs = st.executeQuery(req);
+		while(rs.next()){
+			ins = new InscriptionPE(
+				rs.getInt("idp"), rs.getInt("ide"),
+				rs.getString("categtarif"), rs.getString("nomParticipant"),
+				rs.getString("nomEpreuve"), rs.getString("datep")
+			);
+			ains.add(ins);
+		}
+		return ains;
+	}
+
+	public ArrayList<InscriptionPE> getInscriptionPEs() throws Exception
+	{
+		return getInscriptionPEs("select i.idp,i.ide,i.categtarif,p.nom AS nomParticipant,e.nom AS nomEpreuve,e.datep from inscription i, epreuve e, participant p where e.ide=i.ide and p.idp=i.idp order by e.nom, p.nom");
+	}
+
+	// cette méthode ne peut être utilisée que dans cette classe
+	// elle ne peut pas être utilisée dans d'autres classes
 	public ArrayList<InscriptionPE> getInscriptionsParticipant(int idp) throws Exception
 	{
 		InscriptionPE ins;
