@@ -20,9 +20,30 @@ public class CommandeParticipants implements Commande
   public String execute(HttpServletRequest req) throws Exception
   {
 	  DBS db = DBS.getInstance();
-	  List<Participant> participants = db.getDB_PARTICIPANT().getParticipants();
-	  req.setAttribute("participants", participants);
-          return next;
+	  
+	  
+		
+	  
+	  List<Participant> participants = null;
+	  String trie = req.getParameter("trie");
+		if (trie == null)
+			trie = "";
+			
+		String nomTrie = null;
+		if (trie.equals("ide"))
+			nomTrie = "ide";
+		if (trie.equals("nom"))
+			nomTrie = "nom";
+		if (trie.equals("age"))
+			nomTrie = "age";
+			
+		if (nomTrie != null)
+			participants = db.getDB_PARTICIPANT().getParticipants(nomTrie);
+		else
+			participants = db.getDB_PARTICIPANT().getParticipants();
+			
+	  	req.setAttribute("participants", participants);
+        return next;
   }
 
 }

@@ -14,7 +14,15 @@
 	List<Epreuve> epreuves = (List<Epreuve>)request.getAttribute("epreuves");
 	String coul="lignePaire";
 	out.println("<table>");
-	out.println("<tr class=\"enteteTableau\"><th>ide</th><th>nom</th><th>categ</th><th>datep</th><th>tarifClub</th><th>tarifNonClub</th></tr>");
+	out.println("<tr class=\"enteteTableau\">" + 
+				"<th><a href=\"controleur?cmd=epreuves&trie=ide\">ide</a></th>" + 
+				"<th><a href=\"controleur?cmd=epreuves&trie=nom\">nom</a></th>" + 
+				"<th><a href=\"controleur?cmd=epreuves&trie=categ\">categ</a></th>" + 
+				"<th><a href=\"controleur?cmd=epreuves&trie=datep\">datep</a></th>" + 
+				"<th><a href=\"controleur?cmd=epreuves&trie=tarifClub\">tarifClub</a></th>" + 
+				"<th><a href=\"controleur?cmd=epreuves&trie=tarifNonClub\">tarifNonClub</a></th>" + 
+				"</tr>");
+				
 	for (Epreuve e : epreuves)
 	{
 		coul=(coul.equals("lignePaire"))?"ligneImpaire":"lignePaire";

@@ -21,7 +21,7 @@ public class CommandeParticipant implements Commande
 	public String execute(HttpServletRequest req) throws Exception
 	{
 		DBS db = DBS.getInstance();
-
+		
 		int idp = Integer.parseInt(req.getParameter("idp"));
 		Participant participant = db.getDB_PARTICIPANT().getParticipant(idp);
 		
