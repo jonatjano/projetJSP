@@ -103,7 +103,7 @@
 	  <hr/>
 	  <ul>
 	    <li><a href="controleur?cmd=participantsMAJ"> Mise &agrave; jour des participants </a></li>
-	    <li><a href="controleur?cmd=ajoutParticipant"> Ajouter un participant </a></li>
+	    <li><a href="controleur?cmd=participantAdd"> Ajouter un participant </a></li>
 	    <li><a href="">... </a></li>
 	  </ul>
 	  <%

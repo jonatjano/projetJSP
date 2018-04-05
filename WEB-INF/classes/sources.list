@@ -15,6 +15,9 @@
 ./cmd/Commande.java
 ./cmd/CommandeInscriptionEpreuves.java
 ./cmd/CommandeParticipant.java
+./cmd/CommandeParticipantMAJValid.java
+./cmd/CommandeParticipantAddValid.java
+./cmd/CommandeParticipantDelValid.java
 ./cmd/CommandeEpreuve.java
 ./cmd/NullCommande.java
 ./cmd/CommandeEpreuves.java

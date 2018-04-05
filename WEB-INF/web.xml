@@ -66,7 +66,30 @@
 		<param-value>cmd.CommandeInscriptionEpreuves;inscriptionEpreuves.jsp;all</param-value>
     </context-param>
 
-
+	<context-param>
+        <param-name>cmd-participantsMAJ</param-name>
+		<param-value>cmd.CommandeParticipants;participantsMAJ.jsp;admin</param-value>
+    </context-param>
+	<context-param>
+		<param-name>cmd-participantMAJ</param-name>
+		<param-value>cmd.CommandeParticipant;participantMAJ.jsp;admin</param-value>
+	</context-param>
+	<context-param>
+		<param-name>cmd-participantMAJValid</param-name>
+		<param-value>cmd.CommandeParticipantMAJValid;participantMAJValid.jsp;admin</param-value>
+	</context-param>
+	<context-param>
+		<param-name>cmd-participantAdd</param-name>
+		<param-value>cmd.NullCommande;participantAdd.jsp;admin</param-value>
+	</context-param>
+	<context-param>
+		<param-name>cmd-participantAddValid</param-name>
+		<param-value>cmd.CommandeParticipantAddValid;participantAddValid.jsp;admin</param-value>
+	</context-param>
+	<context-param>
+		<param-name>cmd-participantDelValid</param-name>
+		<param-value>cmd.CommandeParticipantDelValid;participantDelValid.jsp;admin</param-value>
+	</context-param>
 
 	<!-- <context-param>
         <param-name>cmd-produitsMAJ</param-name>
