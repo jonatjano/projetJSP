@@ -8,8 +8,8 @@
 <%@include file="ihm/miseEnPageSPORT1.jsp" %>
 
 <%	// ==============  CORPS =================================================
-	Epreuve e = (Epreuve)request.getAttribute("epreuves");
-	out.println("<h3>creation participant valid&eacute;e</h3>");
+	Epreuve e = (Epreuve)request.getAttribute("epreuve");
+	out.println("<h3>creation epreuve valid&eacute;e</h3>");
 	out.println("<table>");
 	out.println("	<tr class=\"enteteTableau\"><th>ide</th><th>nom</th><th>categ</th><th>datep</th><th>tarifClub</th><th>tarifNonClub</th></tr>");
 	out.println("	<tr class=\"lignePaire\">");

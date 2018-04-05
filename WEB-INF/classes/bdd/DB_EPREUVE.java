@@ -63,7 +63,7 @@ public class DB_EPREUVE {
 		try {
 			ps_insert.setString(1,e.getNom());
 			ps_insert.setString(2,e.getCateg());
-			ps_update.setDate(3,java.sql.Date.valueOf(e.getDatep()));
+			ps_insert.setDate(3,java.sql.Date.valueOf(e.getDatep()));
 			ps_insert.setInt(4,e.getTarifClub());
 			ps_insert.setInt(5,e.getTarifNonClub());
 			//le paramètre passé à executeUpdate permet de récupérer les clefs
