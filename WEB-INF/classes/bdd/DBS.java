@@ -11,7 +11,7 @@ public class DBS {
   private Connection cnx;
   private DB_PARTICIPANT db_participant;
   private DB_EPREUVE db_epreuve;
-  //private DB_INSCRIPTION db_inscription;
+  private DB_INSCRIPTION db_inscription;
 
   private static DBS instance;
 
@@ -29,13 +29,13 @@ public class DBS {
 		System.out.println("connexion etablie");
 		db_participant = new DB_PARTICIPANT(cnx);
 		db_epreuve = new DB_EPREUVE(cnx);
-		//db_inscription = new DB_INSCRIPTION(cnx);
+		db_inscription = new DB_INSCRIPTION(cnx);
      } catch(ClassNotFoundException e){System.out.println(e);}
       catch(SQLException e){System.out.println(e);}
   }
 
   public DB_PARTICIPANT getDB_PARTICIPANT(){return db_participant;}
   public DB_EPREUVE getDB_EPREUVE(){return db_epreuve;}
-  //public DB_INSCRIPTION getDB_INSCRIPTION(){return db_inscription;}
+  public DB_INSCRIPTION getDB_INSCRIPTION(){return db_inscription;}
 
 }

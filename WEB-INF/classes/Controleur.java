@@ -3,7 +3,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import java.util.*;
 import java.lang.reflect.Constructor;
-import pei.*;
+import cmd.*;
 
 public class Controleur extends HttpServlet {
     private Map<String,Commande> map; //hashmap permettant d'associer à chaque nom de commande la classe de commande associée

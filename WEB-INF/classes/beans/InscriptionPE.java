@@ -1,21 +1,21 @@
-package bean;
+package beans;
 
 public class InscriptionPE extends Inscription
 {
 	String nomParticipant;
 	String nomEpreuve;
 	String dateEpreuve;
-	
+
 	public String getNomParticipant()
 	{
 		return nomParticipant;
 	}
-	
+
 	public String getNomEpreuve()
 	{
 		return nomEpreuve;
 	}
-	
+
 	public String getDateEpreuve()
 	{
 		return dateEpreuve;
@@ -38,7 +38,7 @@ public class InscriptionPE extends Inscription
 
 	public InscriptionPE()
 	{}
-	
+
 	public InscriptionPE(int idp, int ide,  String categTarif, String nomParticipant, String nomEpreuve, String dateEpreuve)
 	{
 		super(idp,ide,categTarif);
@@ -46,7 +46,7 @@ public class InscriptionPE extends Inscription
 		this.nomEpreuve = nomEpreuve;
 		this.dateEpreuve = dateEpreuve;
 	}
-	
+
 	public String toString()
 	{
 		return super.toString();

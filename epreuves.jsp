@@ -19,8 +19,8 @@
 	{
 		coul=(coul.equals("lignePaire"))?"ligneImpaire":"lignePaire";
 	        out.println("<tr class=\""+coul+"\">");
-	        
-		String href="controleur?cmd=inscription&ide="+e.getIde();
+
+		String href="controleur?cmd=inscriptionEpreuve&ide="+e.getIde();
 		out.println("<td><a href="+href+">"+e.getIde()+"</a></td>");
 		out.println("<td>"+e.getIde()+"</td>");
 		out.println("<td>"+e.getNom()+"</td>");
@@ -35,7 +35,3 @@
 %>
 
 <jsp:include page="ihm/miseEnPageSPORT2.jsp" />
-
-
-
-

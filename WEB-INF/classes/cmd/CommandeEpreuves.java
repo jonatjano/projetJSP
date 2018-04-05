@@ -20,8 +20,8 @@ public class CommandeEpreuves implements Commande
 	public String execute(HttpServletRequest req) throws Exception
 	{
 		DBS db = DBS.getInstance();
-		List<Epreuve> epreuve = db.getDB_EPREUVE().getEpreuves();
-		req.setAttribute("epreuve", epreuve);
+		List<Epreuve> epreuves = db.getDB_EPREUVE().getEpreuves();
+		req.setAttribute("epreuves", epreuves);
 		return next;
 	}
 

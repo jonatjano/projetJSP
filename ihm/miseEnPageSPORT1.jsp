@@ -10,7 +10,14 @@
 <%
 	}
 
-	Integer droitUtil = 2;
+	Integer droitUtil = null;// (request.getSession().getAttribute("droitUtil") == null)? null : ;
+	String droitUtilSession = (String)(request.getSession().getAttribute("droitUtil"));
+	if (droitUtilSession.equals("all")) {
+		droitUtil = 1;
+	}
+	else if (droitUtilSession.equals("admin")) {
+		droitUtil = 2;
+	}
 	/*
 		Le droit de connexion doit etre 1 (consult) ou 2 (admin). Si
 		ce n'est aucun des deux alors on est renvoyé vers la page de login.

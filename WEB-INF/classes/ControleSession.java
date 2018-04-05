@@ -3,7 +3,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import java.util.*;
 import java.lang.reflect.Constructor;
-import pei.*;
+import cmd.*;
 
 public class ControleSession extends HttpServlet {
 
